@@ -311,31 +311,79 @@
   <section class="slide light">
     <div class="bks-logo"></div>
     <div class="eyebrow"><span class="num">04</span><span class="tick"></span>КАК УСТРОЕН ПРОЦЕСС</div>
-    <div class="head-row"><h2>Аналитика по слоям</h2>
-      <div class="sub">Путь от сырых данных до готового контента в руках клиента — четыре слоя</div></div>
-    <div class="flow anim d1">
-      <div class="flow-step card">
-        <div class="flow-icon" style="background:rgba(27,42,82,.1)">📊</div>
-        <div class="flow-title">Данные</div>
-        <div class="flow-desc">Bloomberg, Finnhub, ММВБ, внутренние системы. Факт-слой: консенсус, мультипликаторы, динамика</div>
+    <div class="head-row"><h2>Архитектура аналитики</h2>
+      <div class="sub">От сырых данных — через аналитические блоки и контроль качества — до клиента</div></div>
+
+    <div style="display:grid;grid-template-columns:140px 32px 1fr 32px 1fr 32px 200px;align-items:stretch;gap:0;flex:1;margin-top:12px" class="anim d1">
+
+      <!-- ДАННЫЕ -->
+      <div style="display:flex;flex-direction:column;justify-content:center">
+        <div style="background:var(--navy);color:#fff;border-radius:18px;padding:22px 18px;text-align:center">
+          <div style="font-size:32px;margin-bottom:10px">📊</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.08em;margin-bottom:10px">ДАННЫЕ</div>
+          <div style="font-size:14px;opacity:.8;line-height:1.4">Bloomberg<br>Finnhub<br>ММВБ<br>Внутренние<br>системы</div>
+        </div>
       </div>
-      <div class="flow-step card">
-        <div class="flow-icon" style="background:rgba(19,138,126,.1)">🔬</div>
-        <div class="flow-title">Аналитики</div>
-        <div class="flow-desc">~20 человек: фундаментальный анализ, модели оценки, инвестиционный кейс, целевая цена</div>
+
+      <!-- Стрелка -->
+      <div style="display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--amber);font-weight:700">→</div>
+
+      <!-- АНАЛИТИЧЕСКИЕ БЛОКИ -->
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <!-- Стратегия — поверх -->
+        <div style="background:var(--amber);color:#fff;border-radius:14px;padding:14px 20px;text-align:center">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.08em">СТРАТЕГИЯ · МАКРО · АЛЛОКАЦИЯ</div>
+          <div style="font-size:14px;opacity:.9;margin-top:4px">Top-down взгляд, сценарный анализ, модель аллокации по классам</div>
+        </div>
+        <!-- 4 блока -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;flex:1">
+          <div style="background:var(--card);border:2px solid var(--navy);border-radius:14px;padding:16px;display:flex;flex-direction:column;align-items:center;text-align:center">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.06em;margin-bottom:6px">АКЦИИ РФ</div>
+            <div style="font-size:14px;color:var(--slate)">15–20 бумаг/аналитик<br>DCF, мультипликаторы</div>
+          </div>
+          <div style="background:var(--card);border:2px solid var(--teal);border-radius:14px;padding:16px;display:flex;flex-direction:column;align-items:center;text-align:center">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:var(--teal);letter-spacing:.06em;margin-bottom:6px">АКЦИИ МИР</div>
+            <div style="font-size:14px;color:var(--slate)">30→100 бумаг/аналитик<br>Консенсус + ИИ + квант</div>
+          </div>
+          <div style="background:var(--card);border:2px solid var(--good);border-radius:14px;padding:16px;display:flex;flex-direction:column;align-items:center;text-align:center">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:var(--good);letter-spacing:.06em;margin-bottom:6px">ОБЛИГАЦИИ</div>
+            <div style="font-size:14px;color:var(--slate)">50+ выпусков/аналитик<br>Кредитный анализ, спреды</div>
+          </div>
+          <div style="background:var(--card);border:2px solid var(--bad);border-radius:14px;padding:16px;display:flex;flex-direction:column;align-items:center;text-align:center">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:var(--bad);letter-spacing:.06em;margin-bottom:6px">КАЧЕСТВО ПРОДУКТА</div>
+            <div style="font-size:14px;color:var(--slate)">Оценка продуктов БКС<br>Рейтинг качества, фокусные продукты</div>
+          </div>
+        </div>
       </div>
-      <div class="flow-step card">
-        <div class="flow-icon" style="background:rgba(217,149,42,.12)">✍️</div>
-        <div class="flow-title">Группа выпуска</div>
-        <div class="flow-desc">~8 редакторов: упаковка, вёрстка, проверка фактов, адаптация под формат и аудиторию</div>
+
+      <!-- Стрелка -->
+      <div style="display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--amber);font-weight:700">→</div>
+
+      <!-- ГРУППА ВЫПУСКА -->
+      <div style="display:flex;flex-direction:column;justify-content:center">
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 18px;text-align:center;flex:1;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-size:32px;margin-bottom:10px">✍️</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:var(--navy);letter-spacing:.06em;margin-bottom:8px">ГРУППА ВЫПУСКА</div>
+          <div style="font-size:14px;color:var(--slate);line-height:1.4">~8 редакторов<br>Упаковка, вёрстка<br>Проверка фактов<br>Адаптация под<br>формат и аудиторию</div>
+        </div>
       </div>
-      <div class="flow-step card">
-        <div class="flow-icon" style="background:rgba(31,157,107,.12)">📱</div>
-        <div class="flow-title">Каналы</div>
-        <div class="flow-desc"><b>Онлайн:</b> приложение, HTML-рассылки, чаты<br><b>Оффлайн:</b> финсоветники, звонки, конференции</div>
+
+      <!-- Стрелка -->
+      <div style="display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--amber);font-weight:700">→</div>
+
+      <!-- КАНАЛЫ -->
+      <div style="display:flex;flex-direction:column;gap:10px;justify-content:center">
+        <div style="background:var(--teal);color:#fff;border-radius:14px;padding:18px 16px;text-align:center">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.06em;margin-bottom:8px">ОНЛАЙН</div>
+          <div style="font-size:14px;opacity:.9;line-height:1.5">Приложение БКС<br>HTML-рассылки<br>Чаты подразделений<br>Telegram-боты</div>
+        </div>
+        <div style="background:var(--navy);color:#fff;border-radius:14px;padding:18px 16px;text-align:center">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.06em;margin-bottom:8px">ОФФЛАЙН</div>
+          <div style="font-size:14px;opacity:.9;line-height:1.5">Финансовые советники<br>Звонки клиентам<br>Конференции<br>Инвесткомитеты</div>
+        </div>
       </div>
+
     </div>
-    <div class="note anim d5">Полный цикл: от идеи до готового материала в руках клиента — один день для оперативных комментариев, 2–5 дней для глубоких отчётов</div>
   </section>
 
   <!-- S6 · РОЛЬ АНАЛИТИКА -->
@@ -402,7 +450,7 @@
 </div>
 
 <div class="nav">
-  <div id="build-label" style="position:fixed;bottom:52px;left:50%;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:14px;color:rgba(100,110,130,.5);letter-spacing:.06em;pointer-events:none;z-index:99">v06 · 2026-07-15</div>
+  <div id="build-label" style="position:fixed;bottom:52px;left:50%;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:14px;color:rgba(100,110,130,.5);letter-spacing:.06em;pointer-events:none;z-index:99">v07 · 2026-07-15</div>
   <div style="position:fixed;bottom:28px;left:40px;font-family:'IBM Plex Mono',monospace;font-size:21px;color:var(--slate-light)"><span id="cur">01</span> / <span id="total">19</span></div>
   <div style="position:fixed;bottom:8px;left:40px;font-family:'IBM Plex Mono',monospace;font-size:14px;color:rgba(255,255,255,.25);letter-spacing:.04em">ЛИСТАЙТЕ: КЛИКЕР · СТРЕЛКИ · ПРОБЕЛ</div>
   <button id="reload" aria-label="Обновить" title="Обновить">⟳</button>

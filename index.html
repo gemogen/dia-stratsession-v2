@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ДИА · Стратсессия 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- build v16 2026-07-16T06:16:09Z -->
 <style>
   :root{
     --navy:#1B2A52;--amber:#D9952A;--teal:#138A7E;--ink:#0C1322;
@@ -163,6 +164,13 @@
   .slide .anim.d5{transition-delay:.5s}
   .slide .anim.d6{transition-delay:.6s}
 
+  /* === TOC === */
+  .toc-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;flex:1;margin-top:14px}
+  .toc-item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;display:flex;flex-direction:column;justify-content:center;gap:8px;position:relative;overflow:hidden}
+  .toc-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--teal)}
+  .toc-item .tn{font-family:'Spectral',serif;font-size:40px;font-weight:700;color:var(--amber);line-height:1}
+  .toc-item .tt{font-size:22px;font-weight:600;color:var(--navy);line-height:1.25}
+
   /* === PRINT === */
   @media print{.nav,.progress{display:none}.deck{height:auto;overflow:visible}.slide{page-break-after:always;height:100vh;min-height:0}}
   @media(max-width:1100px){.slide{padding:40px 36px 52px}h1{font-size:58px}h2{font-size:34px}}
@@ -183,6 +191,24 @@
       <div class="hm"><div class="v">~4.2<span class="ar">₽</span></div><div class="l">млрд под управлением<br>автоследование + страховые активы</div></div>
       <div class="hm"><div class="v">15<span class="ar">+</span></div><div class="l">подразделений-заказчиков<br>внутри компании</div></div>
       <div class="hm"><div class="v">131</div><div class="l">инвестидея за 2025 год<br>№1 в России по количеству</div></div>
+    </div>
+  </section>
+
+  <!-- S1b · СОДЕРЖАНИЕ -->
+  <section class="slide light">
+    <div class="bks-logo"></div>
+    <div class="eyebrow"><span class="tick"></span>СОДЕРЖАНИЕ</div>
+    <div class="head-row"><h2>Программа сессии</h2></div>
+    <div class="toc-grid anim d1">
+      <div class="toc-item"><div class="tn">01</div><div class="tt">Цели</div></div>
+      <div class="toc-item"><div class="tn">02</div><div class="tt">Функции</div></div>
+      <div class="toc-item"><div class="tn">03</div><div class="tt">Команда</div></div>
+      <div class="toc-item"><div class="tn">04</div><div class="tt">KPI и сравнение с конкурентами</div></div>
+      <div class="toc-item"><div class="tn">05</div><div class="tt">Продукт</div></div>
+      <div class="toc-item"><div class="tn">06</div><div class="tt">Достижения</div></div>
+      <div class="toc-item"><div class="tn">07</div><div class="tt">Ключевые гэпы и планы закрытия</div></div>
+      <div class="toc-item"><div class="tn">08</div><div class="tt">Синергии от объединения</div></div>
+      <div class="toc-item"><div class="tn">09</div><div class="tt">Дорожная карта</div></div>
     </div>
   </section>
 
@@ -940,7 +966,7 @@
 </div>
 
 <div class="nav">
-  <div id="build-label" style="position:fixed;bottom:52px;left:50%;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(100,110,130,.5);letter-spacing:.06em;pointer-events:none;z-index:99">v15 · 2026-07-16</div>
+  <div id="build-label" style="position:fixed;bottom:52px;left:50%;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(100,110,130,.5);letter-spacing:.06em;pointer-events:none;z-index:99">v16 · 2026-07-16</div>
   <div style="position:fixed;bottom:28px;left:40px;font-family:'IBM Plex Mono',monospace;font-size:17px;color:var(--slate-light)"><span id="cur">01</span> / <span id="total">19</span></div>
   <div style="position:fixed;bottom:8px;left:40px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(255,255,255,.25);letter-spacing:.04em">ЛИСТАЙТЕ: КЛИКЕР · СТРЕЛКИ · ПРОБЕЛ</div>
   <button id="reload" aria-label="Обновить" title="Обновить">⟳</button>
@@ -955,10 +981,11 @@
   var cur=document.getElementById('cur');
   var total=document.getElementById('total');
   var progress=document.getElementById('progress');
-  var busy=false;
+  var navLock=false, navTimer, targetIdx=0;
 
   total.textContent=String(slides.length).padStart(2,'0');
 
+  function clamp(i){return i<0?0:(i>=slides.length?slides.length-1:i);}
   function getIdx(){
     var st=deck.scrollTop,best=0,bestDist=Infinity;
     for(var i=0;i<slides.length;i++){
@@ -971,21 +998,22 @@
     cur.textContent=String(i+1).padStart(2,'0');
     progress.style.width=((i+1)/slides.length*100)+'%';
     try{history.replaceState(null,'','#s'+(i+1));}catch(e){}
-    // Активируем анимации на текущем слайде
-    slides.forEach(function(s,j){
-      if(j===i) s.classList.add('on');
-    });
+    slides[i].classList.add('on');
   }
+  // Накопительный переход: цель прибавляется на каждое нажатие,
+  // дек едет сразу на итоговый слайд. navLock глушит промежуточный счётчик.
   function goTo(i){
-    if(busy)return;
-    if(i<0)i=0;
-    if(i>=slides.length)i=slides.length-1;
-    busy=true;
-    deck.scrollTo({top:slides[i].offsetTop,behavior:'smooth'});
-    updateCounter(i);
-    setTimeout(function(){busy=false;},600);
+    targetIdx=clamp(i);
+    navLock=true;
+    clearTimeout(navTimer);
+    deck.scrollTo({top:slides[targetIdx].offsetTop,behavior:'smooth'});
+    updateCounter(targetIdx);
+    navTimer=setTimeout(function(){navLock=false;},500);
   }
-  function step(delta){goTo(getIdx()+delta);}
+  function step(delta){
+    if(!navLock)targetIdx=getIdx(); // синхронизируемся с фактической позицией, когда стоим
+    goTo(targetIdx+delta);
+  }
   document.getElementById('next').onclick=function(){step(1);};
   document.getElementById('prev').onclick=function(){step(-1);};
   window.addEventListener('keydown',function(e){
@@ -999,21 +1027,20 @@
   var scrollTimer;
   deck.addEventListener('scroll',function(){
     clearTimeout(scrollTimer);
-    scrollTimer=setTimeout(function(){if(!busy)updateCounter(getIdx());},150);
+    scrollTimer=setTimeout(function(){if(!navLock){targetIdx=getIdx();updateCounter(targetIdx);}},150);
   });
   try{history.scrollRestoration='manual';}catch(e){}
+  // Восстановление позиции при обновлении — мгновенно, без анимации.
   var hm=(location.hash||'').match(/#s(\d+)/);
-  if(hm){
-    var ti=Math.min(slides.length-1,Math.max(0,parseInt(hm[1],10)-1));
-    busy=true;
-    var attempts=0;
-    var restore=setInterval(function(){
-      deck.scrollTo({top:slides[ti].offsetTop,behavior:'auto'});
-      attempts++;
-      if(attempts>=8){clearInterval(restore);setTimeout(function(){busy=false;},200);}
-    },60);
-  }
-  updateCounter(0);
+  var startIdx=hm?clamp(parseInt(hm[1],10)-1):0;
+  var prevBehavior=deck.style.scrollBehavior;
+  deck.style.scrollBehavior='auto';         // выключаем плавность на момент прыжка
+  deck.scrollTop=slides[startIdx].offsetTop; // мгновенно ставим нужный слайд
+  targetIdx=startIdx;
+  updateCounter(startIdx);
+  requestAnimationFrame(function(){requestAnimationFrame(function(){
+    deck.style.scrollBehavior=prevBehavior||'smooth'; // возвращаем плавность
+  });});
 })();
 </script>
 </body>

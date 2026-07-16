@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ДИА · Стратсессия 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- build v17 2026-07-16T06:23:35Z -->
+<!-- build v18 2026-07-16T06:48:47Z -->
 <style>
   :root{
     --navy:#1B2A52;--amber:#D9952A;--teal:#138A7E;--ink:#0C1322;
@@ -79,7 +79,7 @@
   .flow-desc{font-size:17px;color:var(--slate);line-height:1.4}
 
   /* === FUNCTION CARDS === */
-  .fn-card{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:16px 18px;display:flex;gap:10px;align-items:flex-start}
+  .fn-card{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:11px 16px;display:flex;gap:10px;align-items:flex-start}
   .fn-ico{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:21px}
   .fn-card .ft{font-weight:600;font-size:21px;color:var(--ink-text);margin-bottom:4px}
   .fn-card .fd{font-size:17px;color:var(--slate);line-height:1.4}
@@ -171,6 +171,14 @@
   .toc-item .tn{font-family:'Spectral',serif;font-size:40px;font-weight:700;color:var(--amber);line-height:1}
   .toc-item .tt{font-size:22px;font-weight:600;color:var(--navy);line-height:1.25}
 
+  /* === TOC FLOW === */
+  .toc-flow{display:flex;align-items:stretch;gap:18px;flex:1;margin-top:20px}
+  .toc-node{flex:1;display:flex;flex-direction:column;justify-content:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 12px;position:relative;text-align:center}
+  .toc-node::after{content:'→';position:absolute;right:-15px;top:50%;transform:translateY(-50%);font-size:20px;color:var(--amber);font-weight:700;z-index:2}
+  .toc-node:last-child::after{display:none}
+  .toc-node .tfn{font-family:'Spectral',serif;font-size:32px;font-weight:700;color:var(--amber);line-height:1}
+  .toc-node .tft{font-size:15px;font-weight:600;color:var(--navy);line-height:1.25}
+
   /* === PRINT === */
   @media print{.nav,.progress{display:none}.deck{height:auto;overflow:visible}.slide{page-break-after:always;height:100vh;min-height:0}}
   @media(max-width:1100px){.slide{padding:40px 36px 52px}h1{font-size:58px}h2{font-size:34px}}
@@ -195,20 +203,20 @@
   </section>
 
   <!-- S1b · СОДЕРЖАНИЕ -->
-  <section class="slide light">
+    <section class="slide light">
     <div class="bks-logo"></div>
     <div class="eyebrow"><span class="tick"></span>СОДЕРЖАНИЕ</div>
     <div class="head-row"><h2>Программа сессии</h2></div>
-    <div class="toc-grid anim d1">
-      <div class="toc-item"><div class="tn">01</div><div class="tt">Цели</div></div>
-      <div class="toc-item"><div class="tn">02</div><div class="tt">Функции</div></div>
-      <div class="toc-item"><div class="tn">03</div><div class="tt">Команда</div></div>
-      <div class="toc-item"><div class="tn">04</div><div class="tt">KPI и сравнение с конкурентами</div></div>
-      <div class="toc-item"><div class="tn">05</div><div class="tt">Продукт</div></div>
-      <div class="toc-item"><div class="tn">06</div><div class="tt">Достижения</div></div>
-      <div class="toc-item"><div class="tn">07</div><div class="tt">Ключевые гэпы и планы закрытия</div></div>
-      <div class="toc-item"><div class="tn">08</div><div class="tt">Синергии от объединения</div></div>
-      <div class="toc-item"><div class="tn">09</div><div class="tt">Дорожная карта</div></div>
+    <div class="toc-flow anim d1">
+      <div class="toc-node"><div class="tfn">01</div><div class="tft">Цели</div></div>
+      <div class="toc-node"><div class="tfn">02</div><div class="tft">Функции</div></div>
+      <div class="toc-node"><div class="tfn">03</div><div class="tft">Команда</div></div>
+      <div class="toc-node"><div class="tfn">04</div><div class="tft">KPI и сравнение с конкурентами</div></div>
+      <div class="toc-node"><div class="tfn">05</div><div class="tft">Продукт</div></div>
+      <div class="toc-node"><div class="tfn">06</div><div class="tft">Достижения</div></div>
+      <div class="toc-node"><div class="tfn">07</div><div class="tft">Ключевые гэпы и планы закрытия</div></div>
+      <div class="toc-node"><div class="tfn">08</div><div class="tft">Синергии от объединения</div></div>
+      <div class="toc-node"><div class="tfn">09</div><div class="tft">Дорожная карта</div></div>
     </div>
   </section>
 
@@ -243,7 +251,7 @@
     <div class="bks-logo"></div>
     <div class="eyebrow"><span class="num">02</span><span class="tick"></span>ЗАДАЧИ ДИА ВНУТРИ БКС</div>
     <div class="head-row"><h2>Основные функции аналитической дирекции</h2></div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;flex:1;margin-top:4px" class="anim d1">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;flex:1;margin-top:4px" class="anim d1">
 
       <div class="fn-card"><div class="fn-ico" style="background:rgba(27,42,82,.1)">💡</div><div><div class="ft">Генерация качественных инвестиционных идей / аналитики</div><div class="fd">Взгляд на рынки капитала, макроэкономику, сектора, валюты, ставки, компании, товары. Качественные прогнозы, инвестидеи, анализ секторов и сценариев</div></div></div>
 
@@ -265,134 +273,114 @@
   </section>
 
   <!-- S4 · ПРОДУКТ -->
-  <section class="slide light">
+    <section class="slide light">
     <div class="bks-logo"></div>
     <div class="eyebrow"><span class="num">03</span><span class="tick"></span>ЧТО ПРОИЗВОДИМ</div>
     <div class="head-row"><h2>Продукт дирекции</h2></div>
-    <div class="g4 anim d1" style="gap:10px">
-      <div class="prod-col" style="padding:10px 10px">
-        <div class="pc-icon" style="font-size:24px">💡</div>
-        <div class="pc-title" style="font-size:14px">Инвестидеи и контент</div>
+    <div class="g4 anim d1" style="gap:14px">
+      <div class="prod-col" style="padding:16px 16px">
+        <div class="pc-icon" style="font-size:34px">💡</div>
+        <div class="pc-title" style="font-size:20px">Инвестидеи и контент</div>
         <ul class="pc-list">
-          <li style="font-size:11px">Стратегий: РФ 7, US 5, облиг. 4, валюта 5</li>
-          <li style="font-size:11px">Макровзгляд 21 · Такт. портфели 47</li>
-          <li style="font-size:11px">Идеи: 21 акции РФ + 64 облигации</li>
-          <li style="font-size:11px">Нед. взгляды: РФ 49 + валютные 95</li>
-          <li style="font-size:11px">Desk/Flash/Deep Dive/The Chart</li>
+          <li style="font-size:15px"><b>48 видов продукта</b> в 3 форматах</li>
+          <li style="font-size:15px">15 — one-pager · 21 — 2–3 стр · 10 — 4+ с саммари</li>
+          <li style="font-size:15px">Идеи · стратегии · обзоры · календари · пейджеры</li>
+          <li style="font-size:15px">Переход на one-pager: чтение клиентом −53%</li>
         </ul>
-        <div style="margin-top:auto;padding-top:8px;border-top:1px solid var(--line)">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--teal);font-weight:600;letter-spacing:.06em">ПОКРЫТИЕ КЛАССОВ</div>
-          <div style="font-size:10px;color:var(--slate)">Акции РФ · Облиг. РФ · US · Валюты · Товары</div>
+        <div style="margin-top:auto;padding-top:10px;border-top:1px solid var(--line)">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--teal);font-weight:600;letter-spacing:.06em">ПОКРЫТИЕ КЛАССОВ</div>
+          <div style="font-size:14px;color:var(--slate)">Акции РФ · Облигации · Макро/валюты · США/Китай</div>
         </div>
       </div>
-      <div class="prod-col" style="padding:10px 10px">
-        <div class="pc-icon" style="font-size:24px">🧠</div>
-        <div class="pc-title" style="font-size:14px">Знания</div>
+      <div class="prod-col" style="padding:16px 16px">
+        <div class="pc-icon" style="font-size:34px">🧠</div>
+        <div class="pc-title" style="font-size:20px">Знания</div>
         <ul class="pc-list">
-          <li style="font-size:11px">Общение с контрагентами</li>
-          <li style="font-size:11px">Экспертиза для топ-менеджмента</li>
-          <li style="font-size:11px">Макро- и секторальные прогнозы</li>
-          <li style="font-size:11px">Медиа, конференции, Youtube</li>
+          <li style="font-size:15px">Общение с контрагентами</li>
+          <li style="font-size:15px">Экспертиза для топ-менеджмента</li>
+          <li style="font-size:15px">Макро- и секторальные прогнозы</li>
+          <li style="font-size:15px">Медиа, конференции, YouTube</li>
         </ul>
       </div>
-      <div class="prod-col" style="padding:10px 10px">
-        <div class="pc-icon" style="font-size:24px">⚙️</div>
-        <div class="pc-title" style="font-size:14px">Сервисы</div>
+      <div class="prod-col" style="padding:16px 16px">
+        <div class="pc-icon" style="font-size:34px">⚙️</div>
+        <div class="pc-title" style="font-size:20px">Сервисы</div>
         <ul class="pc-list">
-          <li style="font-size:11px"><b>Фабрика инвестидей</b> — по запросу</li>
-          <li style="font-size:11px"><b>Качество продукта</b> — 200+ продуктов</li>
-          <li style="font-size:11px"><b>Wiki-портал</b> + email рассылка</li>
-          <li style="font-size:11px">12 презентаций/мес, 15 фокусных</li>
+          <li style="font-size:15px"><b>Фабрика инвестидей</b> — по запросу</li>
+          <li style="font-size:15px"><b>Качество продукта</b> — 200+ продуктов</li>
+          <li style="font-size:15px"><b>Wiki-портал</b> + email-рассылка</li>
+          <li style="font-size:15px">12 презентаций/мес, 15 фокусных</li>
         </ul>
       </div>
-      <div class="prod-col" style="padding:10px 10px;background:var(--navy);border:none;color:#fff">
-        <div class="pc-icon" style="font-size:24px">📈</div>
-        <div class="pc-title" style="font-size:14px;color:#fff">Портфели</div>
+      <div class="prod-col" style="padding:16px 16px;background:var(--navy);border:none;color:#fff">
+        <div class="pc-icon" style="font-size:34px">📈</div>
+        <div class="pc-title" style="font-size:20px;color:#fff">Портфели</div>
         <ul class="pc-list">
-          <li style="font-size:11px;color:rgba(255,255,255,.9)"><b>8 стратегий</b> АС, AUM 2.2₽ млрд</li>
-          <li style="font-size:11px;color:rgba(255,255,255,.9)"><b>Юнит-стратегии СК</b> ~2.0₽ млрд</li>
-          <li style="font-size:11px;color:rgba(255,255,255,.9)">12.2% после комиссий</li>
-          <li style="font-size:11px;color:rgba(255,255,255,.9)">7/8 в плюсе, +6.7% vs рынок</li>
+          <li style="font-size:15px;color:rgba(255,255,255,.9)"><b>8 стратегий</b> АС, AUM 2.2₽ млрд</li>
+          <li style="font-size:15px;color:rgba(255,255,255,.9)"><b>Юнит-стратегии СК</b> ~2.0₽ млрд</li>
+          <li style="font-size:15px;color:rgba(255,255,255,.9)">12.2% после комиссий</li>
+          <li style="font-size:15px;color:rgba(255,255,255,.9)">7/8 в плюсе, +6.7% vs рынок</li>
         </ul>
-        <div style="margin-top:auto;padding-top:8px;border-top:1px solid rgba(255,255,255,.2)">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--amber);font-weight:600">~4.2 ₽МЛРД AUM</div>
+        <div style="margin-top:auto;padding-top:10px;border-top:1px solid rgba(255,255,255,.2)">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--amber);font-weight:600">~4.2 ₽МЛРД AUM</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- S5 · СЛОИ АНАЛИТИКИ -->
-  <section class="slide light">
+    <section class="slide light">
     <div class="bks-logo"></div>
     <div class="eyebrow"><span class="num">04</span><span class="tick"></span>КАК УСТРОЕН ПРОЦЕСС</div>
     <div class="head-row"><h2>Аналитика: слои</h2>
       <div class="sub">От данных через аналитику и контроль качества — до клиента</div></div>
+    <div style="display:grid;grid-template-columns:170px 34px 250px 34px 1fr 34px 210px;align-items:center;gap:0;flex:1;margin-top:14px" class="anim d1">
 
-    <div style="display:grid;grid-template-columns:160px 40px 1fr 40px 160px 40px 180px;align-items:center;gap:0;flex:1;margin-top:8px" class="anim d1">
-
-      <!-- ДАННЫЕ -->
-      <div style="background:var(--navy);color:#fff;border-radius:16px;padding:18px 14px;text-align:center">
-        <div style="font-size:28px;margin-bottom:8px">📊</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.06em;margin-bottom:8px">ДАННЫЕ</div>
-        <div style="font-size:12px;opacity:.8;line-height:1.4">Bloomberg · Finnhub<br>ММВБ · ЦБ · МЭР<br>MMI · Отраслевые<br>и новостные агентства</div>
+      <div style="background:var(--navy);color:#fff;border-radius:16px;padding:20px 16px;text-align:center">
+        <div style="font-size:30px;margin-bottom:8px">📊</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:700;letter-spacing:.06em;margin-bottom:8px">ДАННЫЕ</div>
+        <div style="font-size:14px;opacity:.85;line-height:1.5">Bloomberg · Finnhub<br>ММВБ · ЦБ · МЭР<br>MMI · отраслевые<br>и новостные агентства</div>
       </div>
 
-      <div style="text-align:center;font-size:24px;color:var(--amber);font-weight:700">→</div>
+      <div style="text-align:center;font-size:26px;color:var(--amber);font-weight:700">→</div>
 
-      <!-- АНАЛИТИКА (центр) -->
-      <div style="display:flex;flex-direction:column;gap:6px">
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:6px">
-          <div style="background:var(--card);border:2px solid var(--navy);border-radius:10px;padding:10px;text-align:center">
-            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;color:var(--navy)">АКЦИИ РФ</div>
-            <div style="font-size:10px;color:var(--slate);margin-top:3px">~15 бумаг/чел</div>
-          </div>
-          <div style="background:var(--card);border:2px solid var(--teal);border-radius:10px;padding:10px;text-align:center">
-            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;color:var(--teal)">АКЦИИ МИР</div>
-            <div style="font-size:10px;color:var(--slate);margin-top:3px">30→100/чел</div>
-          </div>
-          <div style="background:var(--card);border:2px solid var(--good);border-radius:10px;padding:10px;text-align:center">
-            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;color:var(--good)">ОБЛИГАЦИИ</div>
-            <div style="font-size:10px;color:var(--slate);margin-top:3px">150 эмит./750 вып.</div>
-          </div>
-          <div style="background:var(--card);border:2px solid var(--amber);border-radius:10px;padding:10px;text-align:center">
-            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;color:var(--amber)">СТРАТЕГИЯ</div>
-            <div style="font-size:10px;color:var(--slate);margin-top:3px">Макро · аллокация</div>
-          </div>
-          <div style="background:var(--card);border:2px solid var(--slate);border-radius:10px;padding:10px;text-align:center">
-            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;color:var(--slate)">ВАЛЮТА</div>
-            <div style="font-size:10px;color:var(--slate);margin-top:3px">Пары и модели</div>
-          </div>
-        </div>
-        <!-- Качество продукта — отдельный блок снизу, стрелка в оффлайн -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:4px">
-          <div style="background:rgba(212,91,91,.08);border:2px solid var(--bad);border-radius:10px;padding:10px;text-align:center">
-            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;color:var(--bad)">КАЧЕСТВО ПРОДУКТА</div>
-            <div style="font-size:10px;color:var(--slate);margin-top:3px">200+ продуктов · рейтинг · фокусные списки → <b>оффлайн каналы</b></div>
-          </div>
-          <div style="display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--slate);font-style:italic;padding:10px">↗ Из аналитики отдельным потоком<br>через фокусные продукты и рейтинг<br>в каналы продаж (оффлайн)</div>
+      <div style="background:var(--card);border:2px solid var(--navy);border-radius:16px;padding:16px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:700;color:var(--navy);letter-spacing:.06em;margin-bottom:10px;text-align:center">АНАЛИТИКА</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="border-left:4px solid var(--navy);padding-left:10px"><div style="font-weight:700;font-size:15px;color:var(--navy)">Акции РФ</div><div style="font-size:13px;color:var(--slate)">~15 бумаг/чел</div></div>
+          <div style="border-left:4px solid var(--teal);padding-left:10px"><div style="font-weight:700;font-size:15px;color:var(--teal)">Акции Мир</div><div style="font-size:13px;color:var(--slate)">30→100/чел</div></div>
+          <div style="border-left:4px solid var(--good);padding-left:10px"><div style="font-weight:700;font-size:15px;color:var(--good)">Облигации</div><div style="font-size:13px;color:var(--slate)">150 эмит. / 750 вып.</div></div>
+          <div style="border-left:4px solid var(--amber);padding-left:10px"><div style="font-weight:700;font-size:15px;color:#A66A12">Стратегия</div><div style="font-size:13px;color:var(--slate)">макро · аллокация</div></div>
+          <div style="border-left:4px solid var(--slate);padding-left:10px"><div style="font-weight:700;font-size:15px;color:var(--slate)">Валюта</div><div style="font-size:13px;color:var(--slate)">пары и модели</div></div>
         </div>
       </div>
 
-      <div style="text-align:center;font-size:24px;color:var(--amber);font-weight:700">→</div>
+      <div style="text-align:center;font-size:26px;color:var(--amber);font-weight:700">→</div>
 
-      <!-- ГРУППА ВЫПУСКА -->
-      <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 14px;text-align:center">
-        <div style="font-size:28px;margin-bottom:8px">✍️</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:var(--navy);letter-spacing:.06em;margin-bottom:6px">ВЫПУСК</div>
-        <div style="font-size:12px;color:var(--slate);line-height:1.4">~8 редакторов<br>Упаковка · вёрстка<br>Проверка фактов</div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center">
+          <div style="font-size:26px;margin-bottom:6px">✍️</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:700;color:var(--navy);letter-spacing:.06em;margin-bottom:6px">ВЫПУСК</div>
+          <div style="font-size:14px;color:var(--slate);line-height:1.45">~8 редакторов · упаковка<br>вёрстка · проверка фактов</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--amber);font-weight:600;margin-top:8px">→ онлайн + оффлайн</div>
+        </div>
+        <div style="background:rgba(212,91,91,.08);border:2px solid var(--bad);border-radius:14px;padding:16px;text-align:center">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:700;color:var(--bad);letter-spacing:.04em;margin-bottom:6px">КАЧЕСТВО ПРОДУКТА</div>
+          <div style="font-size:14px;color:var(--slate);line-height:1.45">200+ продуктов · рейтинг<br>фокусные списки</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--bad);font-weight:600;margin-top:8px">→ только оффлайн</div>
+        </div>
       </div>
 
-      <div style="text-align:center;font-size:24px;color:var(--amber);font-weight:700">→</div>
+      <div style="text-align:center;font-size:26px;color:var(--amber);font-weight:700">→</div>
 
-      <!-- КАНАЛЫ -->
-      <div style="display:flex;flex-direction:column;gap:6px">
-        <div style="background:var(--teal);color:#fff;border-radius:12px;padding:14px 12px;text-align:center">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.06em;margin-bottom:4px">ОНЛАЙН</div>
-          <div style="font-size:11px;opacity:.9;line-height:1.4">Приложение · Рассылки<br>Чаты · Telegram-боты</div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="background:var(--teal);color:#fff;border-radius:14px;padding:16px;text-align:center">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.06em;margin-bottom:6px">ОНЛАЙН</div>
+          <div style="font-size:14px;opacity:.92;line-height:1.45">Приложение · рассылки<br>чаты · Telegram-боты</div>
         </div>
-        <div style="background:var(--navy);color:#fff;border-radius:12px;padding:14px 12px;text-align:center">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.06em;margin-bottom:4px">ОФФЛАЙН</div>
-          <div style="font-size:11px;opacity:.9;line-height:1.4">Советники · Звонки<br>Конференции · Инвесткомы</div>
+        <div style="background:var(--navy);color:#fff;border-radius:14px;padding:16px;text-align:center">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.06em;margin-bottom:6px">ОФФЛАЙН</div>
+          <div style="font-size:14px;opacity:.92;line-height:1.45">Советники · звонки<br>конференции · инвесткомы</div>
         </div>
       </div>
 
@@ -400,54 +388,50 @@
   </section>
 
   <!-- S6 · РОЛЬ АНАЛИТИКА -->
-  <section class="slide light">
+    <section class="slide light">
     <div class="bks-logo"></div>
     <div class="eyebrow"><span class="num">05</span><span class="tick"></span>РОЛЬ АНАЛИТИКА</div>
     <div class="head-row"><h2>Что покрывает аналитик в БКС</h2>
       <div class="sub">Секторальное распределение · два слоя покрытия</div></div>
-    <div class="anim d1">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);margin-bottom:10px">Слой 1 · Фундаментальное покрытие</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:12px">
-        <div class="role-card" style="padding:16px;text-align:center">
-          <div class="role-tag">Акции РФ</div>
-          <div class="role-big" style="font-size:40px">~15</div>
-          <div class="role-label" style="font-size:14px">бумаг на аналитика</div>
-          <div style="font-size:13px;color:var(--slate);margin-top:6px">Секторальное<br>распределение · DCF</div>
-        </div>
-        <div class="role-card" style="padding:16px;text-align:center">
-          <div class="role-tag">Акции Мир</div>
-          <div class="role-big" style="font-size:40px">~30</div>
-          <div class="role-label" style="font-size:14px">бумаг на аналитика</div>
-          <div style="font-size:13px;color:var(--amber);margin-top:6px;font-weight:600">→ 100 с запуском<br>многофакторной модели</div>
-        </div>
-        <div class="role-card" style="padding:16px;text-align:center">
-          <div class="role-tag">Облигации</div>
-          <div class="role-big" style="font-size:40px">50</div>
-          <div class="role-label" style="font-size:14px">эмитентов на аналитика</div>
-          <div style="font-size:13px;color:var(--slate);margin-top:6px">250 выпусков<br>Кредитный анализ</div>
-        </div>
-        <div class="role-card" style="padding:16px;text-align:center">
-          <div class="role-tag">Макроэкономика</div>
-          <div class="role-big" style="font-size:40px">ХХ</div>
-          <div class="role-label" style="font-size:14px">валютных пар с ₽</div>
-          <div style="font-size:13px;color:var(--slate);margin-top:6px">+ ХХ пар без рубля<br>Макро и вал. модели</div>
-        </div>
-        <div class="role-card" style="padding:16px;text-align:center">
-          <div class="role-tag">Стратегия</div>
-          <div class="role-big" style="font-size:40px">—</div>
-          <div class="role-label" style="font-size:14px">модель аллокации</div>
-          <div style="font-size:13px;color:var(--slate);margin-top:6px">По классам активов<br>Top-down подход</div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:24px">
+      <div class="anim d1">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);margin-bottom:12px">Слой 1 · Фундаментальное покрытие</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:16px">
+          <div class="role-card" style="padding:20px;text-align:center">
+            <div class="role-tag">Акции РФ</div>
+            <div class="role-big" style="font-size:44px">~15</div>
+            <div class="role-label" style="font-size:15px">бумаг на аналитика</div>
+            <div style="font-size:14px;color:var(--slate);margin-top:8px">Секторальное<br>распределение · DCF</div>
+          </div>
+          <div class="role-card" style="padding:20px;text-align:center">
+            <div class="role-tag">Акции Мир</div>
+            <div class="role-big" style="font-size:44px">~30</div>
+            <div class="role-label" style="font-size:15px">бумаг на аналитика</div>
+            <div style="font-size:14px;color:var(--amber);margin-top:8px;font-weight:600">→ 100 с запуском<br>многофакторной модели</div>
+          </div>
+          <div class="role-card" style="padding:20px;text-align:center">
+            <div class="role-tag">Облигации</div>
+            <div class="role-big" style="font-size:44px">50</div>
+            <div class="role-label" style="font-size:15px">эмитентов на аналитика</div>
+            <div style="font-size:14px;color:var(--slate);margin-top:8px">250 выпусков<br>Кредитный анализ</div>
+          </div>
+          <div class="role-card" style="padding:20px;text-align:center">
+            <div class="role-tag">Макроэкономика</div>
+            <div class="role-big" style="font-size:44px">ХХ</div>
+            <div class="role-label" style="font-size:15px">валютных пар с ₽</div>
+            <div style="font-size:14px;color:var(--slate);margin-top:8px">+ ХХ пар без рубля<br>Макро и вал. модели</div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="anim d3" style="margin-top:16px">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);margin-bottom:10px">Слой 2 · Количественная модель</div>
-      <div class="card card-amber" style="padding:16px 20px">
-        <div style="display:flex;align-items:center;gap:20px">
-          <div style="font-size:32px">📐</div>
-          <div>
-            <div style="font-weight:700;font-size:17px;color:var(--navy);margin-bottom:4px">Количественная модель выбора классов активов</div>
-            <div style="font-size:14px;color:var(--slate);line-height:1.5">Поверх фундаментального покрытия — систематический подход к аллокации между классами активов. Сигналы на основе факторов, макро-режимов и ценовой динамики</div>
+      <div class="anim d3">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);margin-bottom:12px">Слой 2 · Количественная модель</div>
+        <div class="card card-amber" style="padding:18px 22px">
+          <div style="display:flex;align-items:center;gap:20px">
+            <div style="font-size:34px">📐</div>
+            <div>
+              <div style="font-weight:700;font-size:18px;color:var(--navy);margin-bottom:4px">Количественная модель выбора классов активов</div>
+              <div style="font-size:15px;color:var(--slate);line-height:1.5">Поверх фундаментального покрытия — систематический подход к аллокации между классами активов. Сигналы на основе факторов, макро-режимов и ценовой динамики</div>
+            </div>
           </div>
         </div>
       </div>
@@ -455,7 +439,7 @@
   </section>
 
   <!-- S7 · ДОСТИЖЕНИЯ: ИДЕИ И ПОРТФЕЛИ -->
-  <section class="slide light">
+    <section class="slide light">
     <div class="bks-logo"></div>
     <div class="eyebrow"><span class="num">06</span><span class="tick"></span>КЛИЕНТЫ · ВНУТРЕННИЕ</div>
     <div class="head-row"><h2>Внутренние заказчики: аллокация и SLA</h2>
@@ -468,15 +452,25 @@
         <div class="alloc-row"><div class="alloc-name">Дубай</div><div><div class="alloc-bar"><div class="alloc-fill" style="width:12%"></div></div></div><div class="alloc-pct">4.3%</div></div>
         <div class="alloc-row"><div class="alloc-name">КИБ</div><div><div class="alloc-bar"><div class="alloc-fill" style="width:11%"></div></div></div><div class="alloc-pct">4.2%</div></div>
         <div class="alloc-row"><div class="alloc-name">ИББ</div><div><div class="alloc-bar"><div class="alloc-fill" style="width:6%"></div></div></div><div class="alloc-pct">2.3%</div></div>
+        <div class="note" style="margin-top:12px;font-size:14px">Крупнейшие отдельные заказчики: <b>Премьер 28.6%</b>, КБО 19.2%, СП 16.0%</div>
       </div>
-      <div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);margin-bottom:10px">SLA и оперритм</div>
-        <div style="display:flex;flex-direction:column;gap:6px">
-          <div class="card" style="padding:12px 14px"><div style="font-weight:600">Дубай</div><div style="font-size:12px;color:var(--slate)">SLA ежемесячный · приоритет оперативных комментариев</div></div>
-          <div class="card" style="padding:12px 14px"><div style="font-weight:600">Брокер / Капитал / Сети / ИББ</div><div style="font-size:12px;color:var(--slate)">SLA ежеквартальный · плановые отчёты + реактивные запросы</div></div>
-          <div class="card" style="padding:12px 14px"><div style="font-weight:600">CSI = 50% выполнение SLA + 50% удовлетворённость</div><div style="font-size:12px;color:var(--slate)">Шкала 1–5, взвешено по аллокации. Ниже 5 — требует комментария</div></div>
+      <div style="display:flex;flex-direction:column">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);margin-bottom:10px">SLA · основные блоки</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div class="card" style="padding:11px 14px"><div style="font-weight:600;font-size:15px">Доступ к аналитике</div><div style="font-size:13px;color:var(--slate)">email-рассылки · Wiki-портал · Фабрика инвестидей — по 50 недель</div></div>
+          <div class="card" style="padding:11px 14px"><div style="font-weight:600;font-size:15px">Звонки и чаты</div><div style="font-size:13px;color:var(--slate)">до 247 ежедневных (Брокер) · 50 еженедельных (ФС) · 25 по США · чаты #Аналитики</div></div>
+          <div class="card" style="padding:11px 14px"><div style="font-weight:600;font-size:15px">Встречи и мероприятия</div><div style="font-size:13px;color:var(--slate)">8–50 встреч/год по сегментам · ВИП-сервис для клиентов 80+</div></div>
+          <div class="card" style="padding:11px 14px"><div style="font-weight:600;font-size:15px">Объём инвестидей</div><div style="font-size:13px;color:var(--slate)">70 долгосрочных/квартал (акции РФ) · 48 по облигациям · 100 обзоров валют/год</div></div>
         </div>
-        <div class="note" style="margin-top:10px">Крупнейшие отдельные заказчики: <b>Премьер 28.6%</b>, КБО 19.2%, СП 16.0%</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--slate);margin-top:8px;line-height:1.5">Расчёт: факт ÷ 90% цели (кэп 100%) → среднее по метрикам · <b>CSI = 50% SLA + 50% удовл.</b></div>
+        <div style="margin-top:auto;padding-top:12px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:6px">Статус согласования SLA</div>
+          <div style="display:flex;gap:8px">
+            <div style="flex:62;background:rgba(31,157,107,.14);border:1px solid rgba(31,157,107,.4);border-radius:8px;padding:8px 6px;text-align:center"><div style="font-family:'Spectral',serif;font-size:22px;font-weight:700;color:var(--good)">62%</div><div style="font-size:12px;color:var(--slate)">согласовано</div></div>
+            <div style="flex:23;background:rgba(217,149,42,.14);border:1px solid rgba(217,149,42,.4);border-radius:8px;padding:8px 6px;text-align:center"><div style="font-family:'Spectral',serif;font-size:22px;font-weight:700;color:#A66A12">23%</div><div style="font-size:12px;color:var(--slate)">ждём</div></div>
+            <div style="flex:15;background:rgba(212,91,91,.12);border:1px solid rgba(212,91,91,.4);border-radius:8px;padding:8px 6px;text-align:center"><div style="font-family:'Spectral',serif;font-size:22px;font-weight:700;color:var(--bad)">15%</div><div style="font-size:12px;color:var(--slate)">нет ответа</div></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -551,7 +545,7 @@
         <div class="bar-row"><div class="nm">Синара</div><div class="bar-track"><div class="bar-fill" style="width:58%;background:#C3C9D6"></div></div><div class="sc">2.92</div></div>
       </div>
       <div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);margin-bottom:8px">Профиль БКС vs лидер</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);margin-bottom:8px">Профиль БКС vs лидер</div>
         <div style="display:flex;flex-direction:column;gap:6px">
           <div class="card" style="padding:10px 14px;display:flex;justify-content:space-between"><span>Содержание</span><span style="font-weight:700;color:var(--good)">5.0 = 5.0</span></div>
           <div class="card" style="padding:10px 14px;display:flex;justify-content:space-between"><span>Широта покрытия</span><span style="font-weight:700;color:var(--good)">5.0 = 5.0</span></div>
@@ -575,45 +569,45 @@
 
       <!-- Все 8 стратегий -->
       <div class="card" style="padding:14px">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:8px">8 стратегий · после комиссий</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:8px">8 стратегий · после комиссий</div>
         <div style="display:flex;flex-direction:column;gap:4px">
-          <div style="display:flex;align-items:center;gap:6px"><span style="width:70px;font-size:11px;color:var(--navy);text-align:right;font-weight:700">Фавориты фикс</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:100%;height:100%;background:var(--navy);border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;width:38px;color:var(--ink-text)">29.6%</span></div>
-          <div style="display:flex;align-items:center;gap:6px"><span style="width:70px;font-size:11px;color:var(--navy);text-align:right;font-weight:700">Фавориты флоут</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:74%;height:100%;background:var(--navy);border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;width:38px;color:var(--ink-text)">21.9%</span></div>
-          <div style="display:flex;align-items:center;gap:6px"><span style="width:70px;font-size:11px;color:var(--navy);text-align:right;font-weight:700">Формула дохода</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:51%;height:100%;background:var(--navy);border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;width:38px;color:var(--ink-text)">15.2%</span></div>
-          <div style="display:flex;align-items:center;gap:6px"><span style="width:70px;font-size:11px;color:var(--navy);text-align:right;">ТВ Лонг</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:31%;height:100%;background:var(--navy);border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;;width:38px;color:var(--ink-text)">9.1%</span></div>
-          <div style="display:flex;align-items:center;gap:6px"><span style="width:70px;font-size:11px;color:var(--navy);text-align:right;">ТВ Нейтрал</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:30%;height:100%;background:var(--navy);border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;;width:38px;color:var(--ink-text)">9.0%</span></div>
-          <div style="display:flex;align-items:center;gap:6px"><span style="width:70px;font-size:11px;color:var(--navy);text-align:right;">ТВ Рыночный</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:27%;height:100%;background:var(--navy);border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;;width:38px;color:var(--ink-text)">8.1%</span></div>
-          <div style="display:flex;align-items:center;gap:6px"><span style="width:70px;font-size:11px;color:var(--navy);text-align:right;">Дивкорзина</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:18%;height:100%;background:var(--navy);border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;;width:38px;color:var(--ink-text)">5.3%</span></div>
-          <div style="display:flex;align-items:center;gap:6px"><span style="width:70px;font-size:11px;color:var(--navy);text-align:right;">Парные идеи</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:0%;height:100%;background:var(--bad);border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;;width:38px;color:var(--bad)">-0.4%</span></div>
+          <div style="display:flex;align-items:center;gap:6px"><span style="width:70px;font-size:13px;color:var(--navy);text-align:right;font-weight:700">Фавориты фикс</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:100%;height:100%;background:var(--navy);border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;width:38px;color:var(--ink-text)">29.6%</span></div>
+          <div style="display:flex;align-items:center;gap:6px"><span style="width:70px;font-size:13px;color:var(--navy);text-align:right;font-weight:700">Фавориты флоут</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:74%;height:100%;background:var(--navy);border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;width:38px;color:var(--ink-text)">21.9%</span></div>
+          <div style="display:flex;align-items:center;gap:6px"><span style="width:70px;font-size:13px;color:var(--navy);text-align:right;font-weight:700">Формула дохода</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:51%;height:100%;background:var(--navy);border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;width:38px;color:var(--ink-text)">15.2%</span></div>
+          <div style="display:flex;align-items:center;gap:6px"><span style="width:70px;font-size:13px;color:var(--navy);text-align:right;">ТВ Лонг</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:31%;height:100%;background:var(--navy);border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;;width:38px;color:var(--ink-text)">9.1%</span></div>
+          <div style="display:flex;align-items:center;gap:6px"><span style="width:70px;font-size:13px;color:var(--navy);text-align:right;">ТВ Нейтрал</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:30%;height:100%;background:var(--navy);border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;;width:38px;color:var(--ink-text)">9.0%</span></div>
+          <div style="display:flex;align-items:center;gap:6px"><span style="width:70px;font-size:13px;color:var(--navy);text-align:right;">ТВ Рыночный</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:27%;height:100%;background:var(--navy);border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;;width:38px;color:var(--ink-text)">8.1%</span></div>
+          <div style="display:flex;align-items:center;gap:6px"><span style="width:70px;font-size:13px;color:var(--navy);text-align:right;">Дивкорзина</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:18%;height:100%;background:var(--navy);border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;;width:38px;color:var(--ink-text)">5.3%</span></div>
+          <div style="display:flex;align-items:center;gap:6px"><span style="width:70px;font-size:13px;color:var(--navy);text-align:right;">Парные идеи</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:0%;height:100%;background:var(--bad);border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;;width:38px;color:var(--bad)">-0.4%</span></div>
         </div>
         <div style="display:flex;justify-content:space-between;margin-top:8px;padding-top:8px;border-top:1px solid var(--line)">
-          <div style="font-size:11px;color:var(--slate)"><i>Рынок акций</i></div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--slate)">2.5%</div>
+          <div style="font-size:13px;color:var(--slate)"><i>Рынок акций</i></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--slate)">2.5%</div>
         </div>
-        <div style="text-align:center;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--good);font-weight:700">Среднее 12.2% · 7 из 8 в плюсе · +6.7% vs рынок</div>
+        <div style="text-align:center;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--good);font-weight:700">Среднее 12.2% · 7 из 8 в плюсе · +6.7% vs рынок</div>
       </div>
 
       <!-- Акции РФ vs конкуренты -->
       <div style="display:flex;flex-direction:column;gap:10px">
         <div class="card" style="padding:14px;flex:1">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:8px;text-align:center">Акции РФ · Топ-квартиль</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:8px;text-align:center">Акции РФ · Топ-квартиль</div>
           <div style="display:flex;flex-direction:column;gap:3px">
-            <div style="display:flex;align-items:center;gap:6px"><span style="width:28px;font-size:11px;font-weight:700;color:var(--navy);text-align:right">ДИА</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:100%;height:100%;background:var(--navy);border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;width:36px">13.2%</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><span style="width:28px;font-size:10px;color:var(--slate);text-align:right">ПИФ</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:33%;height:100%;background:#9AA4BC;border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--slate);width:36px">4.4%</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><span style="width:28px;font-size:10px;color:var(--slate);text-align:right">ДУ</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:24%;height:100%;background:#9AA4BC;border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--slate);width:36px">3.2%</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><span style="width:28px;font-size:10px;color:var(--bad);text-align:right">АС</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--bad);width:36px">-1.7%</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><span style="width:28px;font-size:13px;font-weight:700;color:var(--navy);text-align:right">ДИА</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:100%;height:100%;background:var(--navy);border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;width:36px">13.2%</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><span style="width:28px;font-size:13px;color:var(--slate);text-align:right">ПИФ</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:33%;height:100%;background:#9AA4BC;border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--slate);width:36px">4.4%</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><span style="width:28px;font-size:13px;color:var(--slate);text-align:right">ДУ</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:24%;height:100%;background:#9AA4BC;border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--slate);width:36px">3.2%</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><span style="width:28px;font-size:13px;color:var(--bad);text-align:right">АС</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--bad);width:36px">-1.7%</span></div>
           </div>
-          <div style="text-align:center;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--good);font-weight:700">ДИА №1</div>
+          <div style="text-align:center;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--good);font-weight:700">ДИА №1</div>
         </div>
         <div class="card" style="padding:14px;flex:1">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:8px;text-align:center">Облигации РФ · Топ-квартиль</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:8px;text-align:center">Облигации РФ · Топ-квартиль</div>
           <div style="display:flex;flex-direction:column;gap:3px">
-            <div style="display:flex;align-items:center;gap:6px"><span style="width:28px;font-size:11px;font-weight:700;color:var(--navy);text-align:right">ДИА</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:100%;height:100%;background:var(--navy);border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;width:36px">17.8%</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><span style="width:28px;font-size:10px;color:var(--slate);text-align:right">ДУ</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:99%;height:100%;background:#9AA4BC;border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--slate);width:36px">17.7%</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><span style="width:28px;font-size:10px;color:var(--slate);text-align:right">АС</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:93%;height:100%;background:#9AA4BC;border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--slate);width:36px">16.6%</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><span style="width:28px;font-size:10px;color:var(--slate);text-align:right">ПИФ</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:64%;height:100%;background:#9AA4BC;border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--slate);width:36px">11.4%</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><span style="width:28px;font-size:13px;font-weight:700;color:var(--navy);text-align:right">ДИА</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:100%;height:100%;background:var(--navy);border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;width:36px">17.8%</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><span style="width:28px;font-size:13px;color:var(--slate);text-align:right">ДУ</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:99%;height:100%;background:#9AA4BC;border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--slate);width:36px">17.7%</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><span style="width:28px;font-size:13px;color:var(--slate);text-align:right">АС</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:93%;height:100%;background:#9AA4BC;border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--slate);width:36px">16.6%</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><span style="width:28px;font-size:13px;color:var(--slate);text-align:right">ПИФ</span><div style="flex:1;height:12px;background:#E8EAF0;border-radius:3px;overflow:hidden"><div style="width:64%;height:100%;background:#9AA4BC;border-radius:3px"></div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--slate);width:36px">11.4%</span></div>
           </div>
-          <div style="text-align:center;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--good);font-weight:700">ДИА №1</div>
+          <div style="text-align:center;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--good);font-weight:700">ДИА №1</div>
         </div>
       </div>
 
@@ -646,22 +640,22 @@
       <div class="sub">Четыре ключевые зоны роста, каждая закрывается конкретной задачей</div></div>
     <div class="g2 anim d1" style="gap:14px">
       <div class="zone red" style="padding:18px">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--bad);font-weight:600;letter-spacing:.06em;margin-bottom:4px">ЗАДАЧА 1</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--bad);font-weight:600;letter-spacing:.06em;margin-bottom:4px">ЗАДАЧА 1</div>
         <div class="zt">Покрытие и квант-продукт</div>
         <div class="zd">30 бумаг/человек по US — мало. Нужен рост до 100 через многофакторную модель. Конкуренты покрывают шире</div>
       </div>
       <div class="zone red" style="padding:18px">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--bad);font-weight:600;letter-spacing:.06em;margin-bottom:4px">ЗАДАЧА 2</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--bad);font-weight:600;letter-spacing:.06em;margin-bottom:4px">ЗАДАЧА 2</div>
         <div class="zt">Применение ИИ в ДИА</div>
         <div class="zd">ИИ используется точечно. Цель — 10 постоянных агентов. Сложность: работа во внешнем контуре, три среды</div>
       </div>
       <div class="zone amber" style="padding:18px">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--amber);font-weight:600;letter-spacing:.06em;margin-bottom:4px">ЗАДАЧА 3</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--amber);font-weight:600;letter-spacing:.06em;margin-bottom:4px">ЗАДАЧА 3</div>
         <div class="zt">Непрерывность покрытия</div>
         <div class="zd">Аналитик в отпуске = бумага без покрытия. Нужны: автоматизация, мониторинг конфликтов, флаги изменения кейса</div>
       </div>
       <div class="zone amber" style="padding:18px">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--amber);font-weight:600;letter-spacing:.06em;margin-bottom:4px">ЗАДАЧА 4</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--amber);font-weight:600;letter-spacing:.06em;margin-bottom:4px">ЗАДАЧА 4</div>
         <div class="zt">Сложность восприятия</div>
         <div class="zd">Разрыв −1.7 с Т-Инвестициями по ясности подачи. Наследие ИББ: 10+ страниц вместо карточек. ИИ поможет упростить без потери глубины</div>
       </div>
@@ -681,14 +675,14 @@
           <div class="card card-navy" style="text-align:center;padding:16px"><div class="metric"><div class="mv" style="font-size:36px">100</div><div class="ml" style="color:rgba(255,255,255,.8)">бумаг/аналитик<br>цель 2027</div></div></div>
         </div>
         <div style="margin-top:12px">
-          <div class="card" style="padding:14px;border-left:3px solid var(--teal)"><div style="font-weight:600;color:var(--teal);margin-bottom:4px">Глубокий поток · ~20% бумаг</div><div style="font-size:12px;color:var(--slate)">Полный фундаментальный анализ, аналитик — автор идеи</div></div>
+          <div class="card" style="padding:14px;border-left:3px solid var(--teal)"><div style="font-weight:600;color:var(--teal);margin-bottom:4px">Глубокий поток · ~20% бумаг</div><div style="font-size:13px;color:var(--slate)">Полный фундаментальный анализ, аналитик — автор идеи</div></div>
         </div>
         <div style="margin-top:8px">
-          <div class="card" style="padding:14px;border-left:3px solid var(--amber)"><div style="font-weight:600;color:var(--amber);margin-bottom:4px">Многофакторный поток · ~80% бумаг</div><div style="font-size:12px;color:var(--slate)">БКС Рейтинг формирует сигнал, ИИ генерирует контент, аналитик верифицирует (±15%)</div></div>
+          <div class="card" style="padding:14px;border-left:3px solid var(--amber)"><div style="font-weight:600;color:var(--amber);margin-bottom:4px">Многофакторный поток · ~80% бумаг</div><div style="font-size:13px;color:var(--slate)">БКС Рейтинг формирует сигнал, ИИ генерирует контент, аналитик верифицирует (±15%)</div></div>
         </div>
       </div>
       <div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:8px">4 фактора модели</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:8px">4 фактора модели</div>
         <div style="display:flex;flex-direction:column;gap:6px">
           <div class="card" style="padding:10px 14px;border-left:3px solid var(--navy)"><b>Взгляд аналитика</b> — фундаментальная оценка и таргет</div>
           <div class="card" style="padding:10px 14px;border-left:3px solid var(--teal)"><b>Качество бизнеса</b> — ROE, маржинальность, долг</div>
@@ -708,7 +702,7 @@
       <div class="sub">Цель — 10 постоянных агентов. Три контура сегодня → два контура завтра</div></div>
     <div class="g2 anim d1">
       <div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:8px">Примеры работающих агентов</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:8px">Примеры работающих агентов</div>
         <div style="display:flex;flex-direction:column;gap:6px">
           <div class="card" style="padding:10px 14px;border-left:3px solid var(--good)"><b>Фабрика US Equities</b> — генерация карточек по 150 бумагам</div>
           <div class="card" style="padding:10px 14px;border-left:3px solid var(--good)"><b>Telegram-бот для ФС</b> — ответы на вопросы по бумагам</div>
@@ -718,14 +712,14 @@
         </div>
       </div>
       <div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:8px">Контуры: as is → to be</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:8px">Контуры: as is → to be</div>
         <div class="card" style="padding:14px;margin-bottom:8px;border:2px solid var(--line)">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--bad);font-weight:600;margin-bottom:6px">СЕЙЧАС · 3 КОНТУРА</div>
-          <div style="font-size:12px;color:var(--ink-text);line-height:1.5">1. <b>Личный вовне</b> — каждый использует свои аккаунты<br>2. <b>Общий вовне</b> — API-ключи команды (Claude, GPT)<br>3. <b>В компании</b> — GPT/Qwen в локальной сети</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--bad);font-weight:600;margin-bottom:6px">СЕЙЧАС · 3 КОНТУРА</div>
+          <div style="font-size:13px;color:var(--ink-text);line-height:1.5">1. <b>Личный вовне</b> — каждый использует свои аккаунты<br>2. <b>Общий вовне</b> — API-ключи команды (Claude, GPT)<br>3. <b>В компании</b> — GPT/Qwen в локальной сети</div>
         </div>
         <div class="card card-navy" style="padding:14px">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--amber);font-weight:600;margin-bottom:6px">ЦЕЛЬ · 2 КОНТУРА</div>
-          <div style="font-size:12px;opacity:.9;line-height:1.5">1. <b>Личный</b> — частично сохраняется (эксперименты)<br>2. <b>Корпоративный</b> — всё основное внутри периметра: GPT/Qwen + собственные агенты</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--amber);font-weight:600;margin-bottom:6px">ЦЕЛЬ · 2 КОНТУРА</div>
+          <div style="font-size:13px;opacity:.9;line-height:1.5">1. <b>Личный</b> — частично сохраняется (эксперименты)<br>2. <b>Корпоративный</b> — всё основное внутри периметра: GPT/Qwen + собственные агенты</div>
         </div>
         <div class="note" style="margin-top:8px">Сложность: внешний контур быстрее развивается, внутренний отстаёт на ~6 мес.</div>
       </div>
@@ -743,90 +737,90 @@
 
       <!-- АНАЛИТИКИ -->
       <div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:12px;text-align:center">Аналитик</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:12px;text-align:center">Аналитик</div>
         <div style="display:flex;flex-direction:column;gap:0">
 
           <!-- Уровень 3 — цель -->
           <div style="background:rgba(217,149,42,.2);border:1.5px solid var(--amber);border-radius:14px 14px 0 0;padding:16px 18px;position:relative">
-            <div style="position:absolute;top:8px;right:12px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--amber);font-weight:700">ЦЕЛЬ</div>
+            <div style="position:absolute;top:8px;right:12px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--amber);font-weight:700">ЦЕЛЬ</div>
             <div style="font-weight:700;font-size:16px;color:#fff;margin-bottom:6px">Оператор ИИ</div>
-            <div style="font-size:12px;color:var(--on-dark-mute);line-height:1.5">
+            <div style="font-size:13px;color:var(--on-dark-mute);line-height:1.5">
               <span style="color:var(--amber)">ИИ:</span> сбор данных, модели, черновик отчёта, мониторинг<br>
               <span style="color:#fff">Человек:</span> инвестиционный кейс, верификация, решение<br>
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--good)">100 бумаг/чел · покрытие 24/7</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--good)">100 бумаг/чел · покрытие 24/7</span>
             </div>
           </div>
 
           <!-- Уровень 2 — переход -->
           <div style="background:rgba(27,42,82,.4);border-left:1.5px solid rgba(255,255,255,.15);border-right:1.5px solid rgba(255,255,255,.15);padding:14px 18px">
             <div style="font-weight:700;font-size:14px;color:var(--on-dark);margin-bottom:4px">Аналитик + ИИ-помощник</div>
-            <div style="font-size:12px;color:var(--on-dark-mute);line-height:1.5">
+            <div style="font-size:13px;color:var(--on-dark-mute);line-height:1.5">
               <span style="color:var(--amber)">ИИ:</span> заготовки, расчёты, форматирование<br>
               <span style="color:#fff">Человек:</span> анализ, модель, редактура, публикация<br>
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--slate-light)">30–50 бумаг/чел · ускорение x2</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--slate-light)">30–50 бумаг/чел · ускорение x2</span>
             </div>
           </div>
 
           <!-- Уровень 1 — сейчас -->
           <div style="background:rgba(27,42,82,.2);border:1.5px solid rgba(255,255,255,.1);border-radius:0 0 14px 14px;padding:14px 18px">
             <div style="font-weight:700;font-size:14px;color:var(--on-dark-mute);margin-bottom:4px">Мастер · ручной процесс</div>
-            <div style="font-size:12px;color:var(--on-dark-mute);line-height:1.5">
+            <div style="font-size:13px;color:var(--on-dark-mute);line-height:1.5">
               <span style="color:var(--slate-light)">ИИ:</span> не используется<br>
               <span style="color:var(--on-dark-mute)">Человек:</span> всё сам — данные, модель, текст, вёрстка<br>
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--slate-light)">15–20 бумаг/чел · ручной цикл</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--slate-light)">15–20 бумаг/чел · ручной цикл</span>
             </div>
           </div>
 
         </div>
         <!-- Стрелка вверх -->
-        <div style="text-align:center;margin-top:6px;font-size:11px;color:var(--amber)">↑ больше ИИ — шире покрытие</div>
+        <div style="text-align:center;margin-top:6px;font-size:13px;color:var(--amber)">↑ больше ИИ — шире покрытие</div>
       </div>
 
       <!-- РЕДАКТОРЫ -->
       <div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:12px;text-align:center">Редактор</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:12px;text-align:center">Редактор</div>
         <div style="display:flex;flex-direction:column;gap:0">
 
           <!-- Уровень 3 — цель -->
           <div style="background:rgba(217,149,42,.2);border:1.5px solid var(--amber);border-radius:14px 14px 0 0;padding:16px 18px;position:relative">
-            <div style="position:absolute;top:8px;right:12px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--amber);font-weight:700">ЦЕЛЬ</div>
+            <div style="position:absolute;top:8px;right:12px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--amber);font-weight:700">ЦЕЛЬ</div>
             <div style="font-weight:700;font-size:16px;color:#fff;margin-bottom:6px">Оператор ИИ</div>
-            <div style="font-size:12px;color:var(--on-dark-mute);line-height:1.5">
+            <div style="font-size:13px;color:var(--on-dark-mute);line-height:1.5">
               <span style="color:var(--amber)">ИИ:</span> упрощение языка, вёрстка, генерация карточек<br>
               <span style="color:#fff">Человек:</span> контроль качества, тон, финальная правка<br>
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--good)">x3 объём выпуска · единый стиль</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--good)">x3 объём выпуска · единый стиль</span>
             </div>
           </div>
 
           <!-- Уровень 2 — переход -->
           <div style="background:rgba(27,42,82,.4);border-left:1.5px solid rgba(255,255,255,.15);border-right:1.5px solid rgba(255,255,255,.15);padding:14px 18px">
             <div style="font-weight:700;font-size:14px;color:var(--on-dark);margin-bottom:4px">Редактор + ИИ-помощник</div>
-            <div style="font-size:12px;color:var(--on-dark-mute);line-height:1.5">
+            <div style="font-size:13px;color:var(--on-dark-mute);line-height:1.5">
               <span style="color:var(--amber)">ИИ:</span> черновик упрощения, шаблоны, проверка фактов<br>
               <span style="color:#fff">Человек:</span> стилистика, согласование, публикация<br>
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--slate-light)">x1.5 объём · меньше рутины</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--slate-light)">x1.5 объём · меньше рутины</span>
             </div>
           </div>
 
           <!-- Уровень 1 — сейчас -->
           <div style="background:rgba(27,42,82,.2);border:1.5px solid rgba(255,255,255,.1);border-radius:0 0 14px 14px;padding:14px 18px">
             <div style="font-weight:700;font-size:14px;color:var(--on-dark-mute);margin-bottom:4px">Мастер · ручной процесс</div>
-            <div style="font-size:12px;color:var(--on-dark-mute);line-height:1.5">
+            <div style="font-size:13px;color:var(--on-dark-mute);line-height:1.5">
               <span style="color:var(--slate-light)">ИИ:</span> не используется<br>
               <span style="color:var(--on-dark-mute)">Человек:</span> вычитка, вёрстка, адаптация вручную<br>
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--slate-light)">ограниченный объём · ручной цикл</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--slate-light)">ограниченный объём · ручной цикл</span>
             </div>
           </div>
 
         </div>
-        <div style="text-align:center;margin-top:6px;font-size:11px;color:var(--amber)">↑ больше ИИ — больше контента</div>
+        <div style="text-align:center;margin-top:6px;font-size:13px;color:var(--amber)">↑ больше ИИ — больше контента</div>
       </div>
 
     </div>
 
     <div style="margin-top:auto;padding-top:10px;text-align:center">
       <div style="font-size:14px;color:var(--on-dark);font-weight:600">Ключевой принцип: замещаются не люди, а люди, не использующие ИИ</div>
-      <div style="font-size:12px;color:var(--on-dark-mute);margin-top:4px">Инициатива и финальное суждение — всегда за человеком. ИИ расширяет охват, не заменяет экспертизу</div>
+      <div style="font-size:13px;color:var(--on-dark-mute);margin-top:4px">Инициатива и финальное суждение — всегда за человеком. ИИ расширяет охват, не заменяет экспертизу</div>
     </div>
   </section>
 
@@ -863,7 +857,7 @@
       <div class="sub">Трансформация языка аналитики — через ИИ, не потеряв в глубине</div></div>
     <div style="display:grid;grid-template-columns:1fr 80px 1fr;align-items:center;gap:16px;flex:1;margin-top:12px" class="anim d1">
       <div class="card" style="padding:18px;border:2px solid var(--line)">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--bad);font-weight:600;letter-spacing:.06em;margin-bottom:8px">БЫЛО · ИББ</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--bad);font-weight:600;letter-spacing:.06em;margin-bottom:8px">БЫЛО · ИББ</div>
         <div style="font-size:14px;color:var(--ink-text);line-height:1.5">
           • Детальные отчёты <b>10+ страниц</b><br>
           • Язык для профессионалов<br>
@@ -873,7 +867,7 @@
       </div>
       <div style="text-align:center;font-size:36px;color:var(--amber);font-weight:700">→</div>
       <div class="card card-navy" style="padding:18px">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--amber);font-weight:600;letter-spacing:.06em;margin-bottom:8px">ЦЕЛЬ · РОЗНИЦА</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--amber);font-weight:600;letter-spacing:.06em;margin-bottom:8px">ЦЕЛЬ · РОЗНИЦА</div>
         <div style="font-size:14px;opacity:.9;line-height:1.5">
           • <b>Карточки</b> — суть идеи в 3 предложениях<br>
           • Язык простой, без потери глубины<br>
@@ -932,12 +926,12 @@
     <div style="margin-top:12px;position:relative;padding:14px 0 4px" class="anim d3">
       <div style="position:absolute;top:30px;left:20px;right:20px;height:3px;background:linear-gradient(to right,#15784F,#A66A12,#33508F);border-radius:2px"></div>
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;position:relative">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:700;color:#15784F;background:rgba(31,157,107,.12);padding:2px 6px;border-radius:3px">ИЮЛЬ</div><div style="width:10px;height:10px;border-radius:50%;background:#15784F;border:2px solid #fff;box-shadow:0 0 0 2px #15784F;z-index:1"></div><div style="font-size:9px;text-align:center;font-weight:600">Стратегия</div></div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:700;color:#15784F;background:rgba(31,157,107,.12);padding:2px 6px;border-radius:3px">ИЮЛЬ</div><div style="width:10px;height:10px;border-radius:50%;background:#15784F;border:2px solid #fff;box-shadow:0 0 0 2px #15784F;z-index:1"></div><div style="font-size:9px;text-align:center;font-weight:600">AI-judge</div></div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:700;color:#A66A12;background:rgba(217,149,42,.12);padding:2px 6px;border-radius:3px">КОН. ЛЕТА</div><div style="width:10px;height:10px;border-radius:50%;background:#A66A12;border:2px solid #fff;box-shadow:0 0 0 2px #A66A12;z-index:1"></div><div style="font-size:9px;text-align:center;font-weight:600">База знаний</div></div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:700;color:#33508F;background:rgba(51,80,143,.1);padding:2px 6px;border-radius:3px">4КВ</div><div style="width:10px;height:10px;border-radius:50%;background:#33508F;border:2px solid #fff;box-shadow:0 0 0 2px #33508F;z-index:1"></div><div style="font-size:9px;text-align:center;font-weight:600">Модель</div></div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:700;color:#33508F;background:rgba(51,80,143,.1);padding:2px 6px;border-radius:3px">КОН. 2026</div><div style="width:10px;height:10px;border-radius:50%;background:#33508F;border:2px solid #fff;box-shadow:0 0 0 2px #33508F;z-index:1"></div><div style="font-size:9px;text-align:center;font-weight:600">ИИ 500+</div></div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:700;color:#33508F;background:rgba(51,80,143,.1);padding:2px 6px;border-radius:3px">КОН. 2026</div><div style="width:10px;height:10px;border-radius:50%;background:#33508F;border:2px solid #fff;box-shadow:0 0 0 2px #33508F;z-index:1"></div><div style="font-size:9px;text-align:center;font-weight:600">Агенты 10+</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:#15784F;background:rgba(31,157,107,.12);padding:2px 6px;border-radius:3px">ИЮЛЬ</div><div style="width:10px;height:10px;border-radius:50%;background:#15784F;border:2px solid #fff;box-shadow:0 0 0 2px #15784F;z-index:1"></div><div style="font-size:13px;text-align:center;font-weight:600">Стратегия</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:#15784F;background:rgba(31,157,107,.12);padding:2px 6px;border-radius:3px">ИЮЛЬ</div><div style="width:10px;height:10px;border-radius:50%;background:#15784F;border:2px solid #fff;box-shadow:0 0 0 2px #15784F;z-index:1"></div><div style="font-size:13px;text-align:center;font-weight:600">AI-judge</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:#A66A12;background:rgba(217,149,42,.12);padding:2px 6px;border-radius:3px">КОН. ЛЕТА</div><div style="width:10px;height:10px;border-radius:50%;background:#A66A12;border:2px solid #fff;box-shadow:0 0 0 2px #A66A12;z-index:1"></div><div style="font-size:13px;text-align:center;font-weight:600">База знаний</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:#33508F;background:rgba(51,80,143,.1);padding:2px 6px;border-radius:3px">4КВ</div><div style="width:10px;height:10px;border-radius:50%;background:#33508F;border:2px solid #fff;box-shadow:0 0 0 2px #33508F;z-index:1"></div><div style="font-size:13px;text-align:center;font-weight:600">Модель</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:#33508F;background:rgba(51,80,143,.1);padding:2px 6px;border-radius:3px">КОН. 2026</div><div style="width:10px;height:10px;border-radius:50%;background:#33508F;border:2px solid #fff;box-shadow:0 0 0 2px #33508F;z-index:1"></div><div style="font-size:13px;text-align:center;font-weight:600">ИИ 500+</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:#33508F;background:rgba(51,80,143,.1);padding:2px 6px;border-radius:3px">КОН. 2026</div><div style="width:10px;height:10px;border-radius:50%;background:#33508F;border:2px solid #fff;box-shadow:0 0 0 2px #33508F;z-index:1"></div><div style="font-size:13px;text-align:center;font-weight:600">Агенты 10+</div></div>
       </div>
     </div>
   </section>
@@ -948,7 +942,7 @@
 </div>
 
 <div class="nav">
-  <div id="build-label" style="position:fixed;bottom:52px;left:50%;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(100,110,130,.5);letter-spacing:.06em;pointer-events:none;z-index:99">v17 · 2026-07-16</div>
+  <div id="build-label" style="position:fixed;bottom:52px;left:50%;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(100,110,130,.5);letter-spacing:.06em;pointer-events:none;z-index:99">v18 · 2026-07-16</div>
   <div style="position:fixed;bottom:28px;left:40px;font-family:'IBM Plex Mono',monospace;font-size:17px;color:var(--slate-light)"><span id="cur">01</span> / <span id="total">19</span></div>
   <div style="position:fixed;bottom:8px;left:40px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(255,255,255,.25);letter-spacing:.04em">ЛИСТАЙТЕ: КЛИКЕР · СТРЕЛКИ · ПРОБЕЛ</div>
   <button id="reload" aria-label="Обновить" title="Обновить">⟳</button>
